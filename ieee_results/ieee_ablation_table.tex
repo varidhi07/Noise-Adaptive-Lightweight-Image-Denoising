@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{Ablation Study of the Proposed Noise-Adaptive Architecture (Mean $\pm$ Std over 3 Training Seeds). Best in \textbf{bold}, second-best \underline{underlined}.}
+\label{tab:ablation_study}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccccccc}
+\toprule
+Model & Params (K) & Gaussian ($\sigma=25$) & Impulse ($p=0.15$) & Mixed & Mean PSNR & Mean SSIM & Avg. Rank \\
+\midrule
+w/o FiLM (Static) & 35.5 & \textbf{28.61$\pm$0.07} & 31.28$\pm$0.15 & \textbf{29.83$\pm$0.05} & \underline{30.12} & \textbf{0.8374} & 1.78 (\#1) \\
+Full Model (Ours) & 44.5 & \underline{28.50$\pm$0.15} & \textbf{31.62$\pm$0.24} & 29.82$\pm$0.05 & \textbf{30.16} & \underline{0.8358} & 2.00 (\#2) \\
+Mean-Pool Only & 43.4 & 28.45$\pm$0.07 & \underline{31.44$\pm$0.02} & \underline{29.83$\pm$0.02} & 30.11 & 0.8354 & 3.56 (\#3) \\
+w/o Cond. Dropout & 44.5 & 28.49$\pm$0.19 & 31.20$\pm$0.13 & 29.72$\pm$0.05 & 30.00 & 0.8352 & 4.11 (\#4) \\
+w/o Aux Supervision & 44.5 & 28.49$\pm$0.18 & 31.20$\pm$0.17 & 29.76$\pm$0.03 & 29.99 & 0.8336 & 4.33 (\#5) \\
+w/o High-Pass & 44.5 & 28.48$\pm$0.20 & 31.12$\pm$0.12 & 29.71$\pm$0.05 & 29.96 & 0.8340 & 6.00 (\#6) \\
+Pre-Sigmoid FiLM & 44.5 & 28.47$\pm$0.20 & 31.13$\pm$0.16 & 29.71$\pm$0.06 & 29.96 & 0.8339 & 6.56 (\#7) \\
+Full Model (cond\_on=False) & -- & 28.41$\pm$0.19 & 30.98$\pm$0.08 & 29.70$\pm$0.09 & 29.91 & 0.8336 & 7.67 (\#8) \\
+\bottomrule
+\end{tabular}
+\end{table*}

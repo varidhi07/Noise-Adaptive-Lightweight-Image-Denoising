@@ -1,0 +1,15 @@
+Suite,Model,Params,Params_K,GMac_256,Latency_ms
+Literature,Noise-Adaptive (ours),44455,44.45,2.652,9.78
+Literature,HKCNN-style,251493,251.49,16.477,26.15
+Literature,"HKCNN-style (44K, matched)",44321,44.32,2.902,10.09
+Literature,LWIFCNN-style,140901,140.9,9.23,22.34
+Literature,NAF-style,65715,65.72,3.228,25.72
+Literature,Dual-Attention (CBAM-style),19665,19.66,1.284,8.66
+Literature,Cross-Channel (QMSANet-style),26331,26.33,1.246,6.19
+Ablation,Full Model (Ours),44455,44.45,2.652,9.78
+Ablation,w/o High-Pass,44455,44.45,2.652,9.69
+Ablation,w/o FiLM (Static),35493,35.49,2.322,8.93
+Ablation,w/o Cond. Dropout,44455,44.45,2.652,9.71
+Ablation,w/o Aux Supervision,44455,44.45,2.652,9.79
+Ablation,Mean-Pool Only,43431,43.43,2.652,9.66
+Ablation,Post-Sigmoid FiLM,44455,44.45,2.652,9.75

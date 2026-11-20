@@ -1,0 +1,40 @@
+Suite,Reference,Comparison_Model,Condition,Delta_PSNR_mean_dB,Delta_PSNR_std_dB,Seed_Paired_t_p
+Literature,Noise-Adaptive (ours),"HKCNN-style (44K, matched)",Gaussian,0.6057,0.2575,0.05528216234382368
+Literature,Noise-Adaptive (ours),LWIFCNN-style,Gaussian,-0.1246,0.2431,0.46824849949654435
+Literature,Noise-Adaptive (ours),NAF-style,Gaussian,-0.0928,0.24,0.5720606643479547
+Literature,Noise-Adaptive (ours),Dual-Attention (CBAM-style),Gaussian,0.5487,0.1739,0.031874300913421236
+Literature,Noise-Adaptive (ours),Cross-Channel (QMSANet-style),Gaussian,0.4253,0.1995,0.06614694324368643
+Literature,Noise-Adaptive (ours),"HKCNN-style (44K, matched)",Impulse,1.1702,0.404,0.037511170525019476
+Literature,Noise-Adaptive (ours),LWIFCNN-style,Impulse,0.4077,0.1901,0.06543605954643474
+Literature,Noise-Adaptive (ours),NAF-style,Impulse,-0.1224,0.3097,0.5643735839874292
+Literature,Noise-Adaptive (ours),Dual-Attention (CBAM-style),Impulse,1.8873,0.1578,0.0023233132522804656
+Literature,Noise-Adaptive (ours),Cross-Channel (QMSANet-style),Impulse,1.5769,0.3426,0.015370125253236867
+Literature,Noise-Adaptive (ours),"HKCNN-style (44K, matched)",Mixed,0.4306,0.284,0.1195391281392808
+Literature,Noise-Adaptive (ours),LWIFCNN-style,Mixed,0.0594,0.0977,0.40285043368417284
+Literature,Noise-Adaptive (ours),NAF-style,Mixed,0.0737,0.193,0.5760836398705771
+Literature,Noise-Adaptive (ours),Dual-Attention (CBAM-style),Mixed,0.7339,0.0223,0.0003070927070954989
+Literature,Noise-Adaptive (ours),Cross-Channel (QMSANet-style),Mixed,0.572,0.0856,0.007385944041382135
+Ablation,Full Model (Ours),w/o High-Pass,Gaussian,0.0215,0.0529,0.5540014323509899
+Ablation,Full Model (Ours),w/o FiLM (Static),Gaussian,-0.1082,0.154,0.3477043456349672
+Ablation,Full Model (Ours),w/o Cond. Dropout,Gaussian,0.015,0.0523,0.6690186017411399
+Ablation,Full Model (Ours),w/o Aux Supervision,Gaussian,0.0085,0.0421,0.7588167150215708
+Ablation,Full Model (Ours),Mean-Pool Only,Gaussian,0.0523,0.123,0.5382865364426914
+Ablation,Full Model (Ours),Post-Sigmoid FiLM,Gaussian,0.0,0.0,
+Ablation,Full Model (Ours),Full Model (cond_on=False),Gaussian,0.0861,0.0489,0.09281068543111662
+Ablation,Full Model (Ours),Pre-Sigmoid FiLM,Gaussian,0.031,0.0641,0.49048258650410315
+Ablation,Full Model (Ours),w/o High-Pass,Impulse,0.5019,0.294,0.09788598073534699
+Ablation,Full Model (Ours),w/o FiLM (Static),Impulse,0.3388,0.2568,0.14967852555451944
+Ablation,Full Model (Ours),w/o Cond. Dropout,Impulse,0.4226,0.2977,0.13316058640538275
+Ablation,Full Model (Ours),w/o Aux Supervision,Impulse,0.4238,0.1182,0.024962563798259306
+Ablation,Full Model (Ours),Mean-Pool Only,Impulse,0.1832,0.2509,0.33338956439086653
+Ablation,Full Model (Ours),Post-Sigmoid FiLM,Impulse,0.0,0.0,
+Ablation,Full Model (Ours),Full Model (cond_on=False),Impulse,0.6402,0.265,0.0526456169971487
+Ablation,Full Model (Ours),Pre-Sigmoid FiLM,Impulse,0.4886,0.3215,0.1191024593525075
+Ablation,Full Model (Ours),w/o High-Pass,Mixed,0.1087,0.0816,0.14721876291034022
+Ablation,Full Model (Ours),w/o FiLM (Static),Mixed,-0.0134,0.093,0.8264806348345356
+Ablation,Full Model (Ours),w/o Cond. Dropout,Mixed,0.1018,0.0791,0.1557735615758673
+Ablation,Full Model (Ours),w/o Aux Supervision,Mixed,0.0651,0.0439,0.12408720902431288
+Ablation,Full Model (Ours),Mean-Pool Only,Mixed,-0.008,0.0332,0.7162154201364613
+Ablation,Full Model (Ours),Post-Sigmoid FiLM,Mixed,0.0,0.0,
+Ablation,Full Model (Ours),Full Model (cond_on=False),Mixed,0.1257,0.1328,0.24275934137556512
+Ablation,Full Model (Ours),Pre-Sigmoid FiLM,Mixed,0.1111,0.099,0.19131729678873952

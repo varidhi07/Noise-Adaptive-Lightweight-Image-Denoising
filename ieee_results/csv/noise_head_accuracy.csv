@@ -1,0 +1,7 @@
+Variant,MAE_Gaussian_mean,R2_Gaussian_mean,MAE_Impulse_mean,R2_Impulse_mean
+Full Model (Ours),0.0627,0.9369,0.0376,0.9784
+w/o High-Pass,0.0878,0.8822,0.04,0.9757
+w/o Cond. Dropout,0.0633,0.9357,0.037,0.9785
+w/o Aux Supervision,0.643,0.4819,0.2607,0.6744
+Mean-Pool Only,0.0524,0.9612,0.0392,0.9778
+Post-Sigmoid FiLM,0.0648,0.9314,0.0336,0.981

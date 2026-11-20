@@ -1,0 +1,7 @@
+Model,CBSD68_Gaussian,CBSD68_Impulse,CBSD68_Mixed,Kodak24_Gaussian,Kodak24_Impulse,Kodak24_Mixed,Set12_Gaussian,Set12_Impulse,Set12_Mixed,Mean_Rank,Overall_Rank
+Cross-Channel (QMSANet-style),4.0,5.0,5.0,4.0,5.0,5.0,4.0,5.0,5.0,4.666666666666667,4
+Dual-Attention (CBAM-style),5.0,6.0,6.0,5.0,6.0,6.0,5.0,6.0,6.0,5.666666666666667,6
+"HKCNN-style (44K, matched)",6.0,4.0,4.0,6.0,4.0,4.0,6.0,4.0,4.0,4.666666666666667,4
+LWIFCNN-style,1.0,3.0,2.0,1.0,3.0,2.0,1.0,3.0,1.0,1.8888888888888888,1
+NAF-style,2.0,1.0,3.0,2.0,1.0,3.0,2.0,1.0,3.0,2.0,2
+Noise-Adaptive (ours),3.0,2.0,1.0,3.0,2.0,1.0,3.0,2.0,2.0,2.111111111111111,3

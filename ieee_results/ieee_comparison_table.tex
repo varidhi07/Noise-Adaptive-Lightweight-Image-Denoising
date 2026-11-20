@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\caption{Quantitative Comparison Against Literature-Style Baselines on Held-Out CBSD68 and Cross-Dataset Benchmarks (Mean $\pm$ Std over 3 Training Seeds). Best in \textbf{bold}, second-best \underline{underlined}.}
+\label{tab:literature_comparison}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccccccc}
+\toprule
+Model & Params (K) & Gaussian ($\sigma=25$) & Impulse ($p=0.15$) & Mixed & Mean PSNR & Mean SSIM & Avg. Rank \\
+\midrule
+LWIFCNN-style & 140.9 & \textbf{28.63$\pm$0.10} & 31.21$\pm$0.23 & \underline{29.76$\pm$0.07} & 30.13 & \underline{0.8395} & 1.89 (\#1) \\
+NAF-style & 65.7 & \underline{28.59$\pm$0.10} & \textbf{31.74$\pm$0.20} & 29.75$\pm$0.16 & \textbf{30.24} & \textbf{0.8420} & 2.00 (\#2) \\
+Noise-Adaptive (ours) & 44.5 & 28.50$\pm$0.15 & \underline{31.62$\pm$0.24} & \textbf{29.82$\pm$0.05} & \underline{30.16} & 0.8358 & 2.11 (\#3) \\
+Cross-Channel (QMSANet-style) & 26.3 & 28.08$\pm$0.05 & 30.04$\pm$0.12 & 29.25$\pm$0.04 & 29.35 & 0.8146 & 4.67 (\#4) \\
+HKCNN-style (44K, matched) & 44.3 & 27.89$\pm$0.14 & 30.45$\pm$0.49 & 29.39$\pm$0.25 & 29.50 & 0.8228 & 4.67 (\#4) \\
+Dual-Attention (CBAM-style) & 19.7 & 27.95$\pm$0.03 & 29.73$\pm$0.11 & 29.09$\pm$0.03 & 29.16 & 0.8115 & 5.67 (\#6) \\
+\bottomrule
+\end{tabular}
+\end{table*}
