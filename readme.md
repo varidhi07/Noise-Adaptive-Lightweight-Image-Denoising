@@ -63,7 +63,7 @@ All models are trained across **3 random seeds** (`[42, 123, 456]`) using `Adam`
 
 ### Google Colab
 
-1. Upload `imagedenoising_fixed_headv2.ipynb` to Google Colab and select **Runtime → Change runtime type → T4 GPU**.
+1. Upload `noise_adaptive_image_denoiser.ipynb` to Google Colab and select **Runtime → Change runtime type → T4 GPU**.
 
 2. Run all cells; checkpoints and results persist to `/content/drive/MyDrive/denoising_project/ablation_ieee_results_v5/`.
 
