@@ -27,7 +27,7 @@ Single-noise denoisers degrade sharply when tested off-domain, while static mixe
 
    * `Tail`: $3\times 3$ `Conv2d` (`48 → 3`) predicting the noise residual $\hat{n}$, subtracted from the input ($\hat{x} = x - \hat{n}$).
 
-## Datasets & Leak-Free Split
+## Datasets
 
 * **Training (`BSD400`, deduplicated)**: Downloads `BSDS500` train/val (`300` images) and removes all `68` `CBSD68` test image stems, leaving **`232` leak-free training images** (`repeats=4` random `64×64` patches/epoch = `928` samples/epoch, `1,450` gradient steps over `50` epochs).
 
