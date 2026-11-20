@@ -1,4 +1,4 @@
-# Noise-Adaptive Blind Multi-Noise Image Denoiser
+# Noise Adaptive-Lightweight Image Denoiser
 
 A lightweight (`44.45K` parameters, `2.652` GMac at `256×256`) blind image denoising framework designed to handle **Gaussian**, **Impulse (salt-and-pepper)**, and **Mixed** noise within a single unified model, accompanied by a 3-seed IEEE evaluation and ablation suite.
 
@@ -8,60 +8,8 @@ Single-noise denoisers degrade sharply when tested off-domain, while static mixe
 
 ## Architecture Summary
 
-```
-flowchart LR
-    classDef f5x5 fill:#FDEBD0,stroke:#D35400,stroke-width:2px,color:#000
-    classDef f3x3 fill:#D6EAF8,stroke:#2471A3,stroke-width:2px,color:#000
-    classDef fdw3 fill:#D1F2EB,stroke:#117864,stroke-width:2px,color:#000
-    classDef f1x1 fill:#EBDEF0,stroke:#7D3C98,stroke-width:2px,color:#000
-    classDef f1d3 fill:#FADBD8,stroke:#C0392B,stroke-width:2px,color:#000
-    classDef ffc  fill:#FCF3CF,stroke:#B7950B,stroke-width:2px,color:#000
-    classDef fop  fill:#EAECEE,stroke:#566573,stroke-width:2px,color:#000
+<img width="1327" height="937" alt="architecture" src="https://github.com/user-attachments/assets/aeea30e4-6085-4f71-9ab7-76221269f663" />
 
-    IN["Input x (B,3,H,W)"]:::fop
-
-    subgraph HEAD["NoiseDescriptorHead"]
-        HP["HighPass 5x5 Fixed (groups=3)"]:::f5x5
-        HC1["Head Conv1 3x3 + ReLU (3->16)"]:::f3x3
-        HC2["Head Conv2 3x3 + ReLU (16->32)"]:::f3x3
-        POOL["Global Mean + Std Pool (64-D)"]:::fop
-        FC1["Head FC1 Linear + ReLU (64->32)"]:::ffc
-        FC2["Head FC2 Linear + Sigmoid (32->2)"]:::ffc
-        MASK["Cond. Dropout Mask m (p_drop=0.25)"]:::fop
-        HP --> HC1 --> HC2 --> POOL --> FC1 --> FC2 --> MASK
-    end
-
-    STEM["Stem Conv2d 3x3 (3->48)"]:::f3x3
-
-    subgraph RAB["NoiseConditionedRAB (x6 blocks, channels=48)"]
-        DW1["DWConv1 3x3, g=48"]:::fdw3
-        PW1["PWConv1 1x1 + ReLU"]:::f1x1
-        DW2["DWConv2 3x3, g=48"]:::fdw3
-        PW2["PWConv2 1x1"]:::f1x1
-        GAP["ECA GAP (1x1)"]:::fop
-        ECA["ECA Conv1d (k=3) + Sigmoid"]:::f1d3
-        FILM["ResidualFiLM Linear (2->96, 0-init)"]:::ffc
-        PMOD["Post-Sig. FiLM clamp(a*gamma+beta,0,1)"]:::fop
-        MUL(("x")):::fop
-        ADD(("+")):::fop
-
-        DW1 --> PW1 --> DW2 --> PW2 --> MUL --> ADD
-        PW2 --> GAP --> ECA --> PMOD --> MUL
-        FILM --> PMOD
-    end
-
-    TAIL["Tail Conv2d 3x3 (48->3)"]:::f3x3
-    SUB(("-")):::fop
-    OUT["Denoised Output (B,3,H,W)"]:::fop
-
-    IN --> HP
-    IN --> STEM --> DW1
-    MASK -->|"(d, m)"| FILM
-    ADD --> TAIL --> SUB --> OUT
-    IN -.->|"Global Residual: x - Tail(feat)"| SUB
-
-
-```
 
 1. **`NoiseDescriptorHead`**:
 
