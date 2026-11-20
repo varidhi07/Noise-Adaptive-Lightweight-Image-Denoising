@@ -53,7 +53,7 @@ All models are trained across **3 random seeds** (`[42, 123, 456]`) using `Adam`
 
 ### Kaggle (Recommended)
 
-1. Upload `imagedenoising_fixed_headv2.ipynb` to a Kaggle Notebook.
+1. Upload `noise_adaptive_image_denoiser.ipynb` to a Kaggle Notebook.
 
 2. In **Session options**, set **Accelerator** to **GPU T4 x2** (or **GPU P100**) and toggle **Internet** to **On**.
 
